@@ -1,0 +1,21 @@
+[
+  {
+    "content": "A report issued by the health authorities say that identified gay population in Sri Lanka is around 7,500.Dr. Sisira Liyanage, the Director of the National Venereal Diseases and Prevention of AIDS project said special programmes have been launched to prevent the spread of venereal diseases through gay males.Dr. Liyanage revealed that blood samples of around 12,000 suspected disease carriers were lab-tested and detected 280 AIDS patients.He said the majority of them were gay persons.They have identified Colombo, Gampaha, Galle, Kalutara, and Kurunegala as highly susceptible areas for the spread of venereal diseases and AIDS.",
+    "date": "Wednesday, 03 January 2018 - 11:32",
+    "link": "http://www.hirunews.lk/180022/aids-spread-among-rising-sri-lankas-gay-community",
+    "heading": "AIDS spread among rising Sri Lanka's gay community",
+    "media_ethics": {
+      "violations": true,
+      "reason": [
+        {
+          "rule": "Disclosing details of race, caste, religion, sexual orientation, physical and mental illness or disabilities",
+          "sentence": "gay males"
+        },
+        {
+          "rule": "Disclosing details of race, caste, religion, sexual orientation, physical and mental illness or disabilities",
+          "sentence": "gay persons"
+        }
+      ]
+    }
+  }
+]
