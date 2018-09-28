@@ -6,12 +6,12 @@ matcher = Matcher(nlp.vocab)
 
 
 matcher.add('Disclosing private details of Victim', None,
-                    [{'LOWER': 'rape'}, {'IS_ASCII': True, 'OP': '*'}, {'LOWER': 'of'}, {'IS_ASCII': True, 'OP': '*'}, {'LOWER': 'vidya'}],
-                    [{'LOWER': 'rape'}, {'IS_ASCII': True, 'OP': '*'}, {'LOWER': 'of'}, {'IS_ASCII': True, 'OP': '*'}, {'LOWER': 'vithya'}],
-                    [{'LOWER': 'murder'}, {'IS_ASCII': True, 'OP': '*'}, {'LOWER': 'of'}, {'IS_ASCII': True, 'OP': '*'},{'LOWER': 'seya'}],
-                    [{'LOWER': 'murder'}, {'IS_ASCII': True, 'OP': '*'}, {'LOWER': 'of'}, {'IS_ASCII': True, 'OP': '*'},{'LOWER': 'sadevmi'}],
-                    [{'LOWER': 'victim'}, {'IS_ASCII': True, 'OP': '*'}, {'LOWER': 'as'}, {'IS_ASCII': True, 'OP': '*'},{'LOWER': 'ramasamy'}],
-                    [{'LOWER': 'victim'}, {'IS_ASCII': True, 'OP': '*'}, {'LOWER': 'as'}, {'IS_ASCII': True, 'OP': '*'},{'LOWER': 'priyanka'}],
+                    [{'LOWER': 'rape'}, {'IS_ASCII': True, 'OP': '*'}, {'LOWER': 'of'}, {'IS_ASCII': True, 'OP': '*'},{'ENT_TYPE': 'PERSON'}],
+                    [{'LOWER': 'rape'}, {'IS_ASCII': True, 'OP': '*'}, {'LOWER': 'of'}, {'IS_ASCII': True, 'OP': '*'}, {'ENT_TYPE': 'PERSON'}],
+                    [{'LOWER': 'murder'}, {'IS_ASCII': True, 'OP': '*'}, {'LOWER': 'of'}, {'IS_ASCII': True, 'OP': '*'},{'ENT_TYPE': 'PERSON'}],
+                    [{'LOWER': 'murder'}, {'IS_ASCII': True, 'OP': '*'}, {'LOWER': 'of'}, {'IS_ASCII': True, 'OP': '*'},{'ENT_TYPE': 'PERSON'}],
+                    [{'LOWER': 'victim'}, {'IS_ASCII': True, 'OP': '*'}, {'LOWER': 'as'}, {'IS_ASCII': True, 'OP': '*'},{'ENT_TYPE': 'PERSON'}],
+                    [{'LOWER': 'victim'}, {'IS_ASCII': True, 'OP': '*'}, {'LOWER': 'as'}, {'IS_ASCII': True, 'OP': '*'},{'ENT_TYPE': 'PERSON'}],
                     [{'LOWER': 'raping'}, {'IS_ASCII': True, 'OP': '*'}, {'ENT_TYPE': 'PERSON'}]
             )
 
