@@ -6,19 +6,25 @@ matcher = Matcher(nlp.vocab)
 
 
 matcher.add('Disclosing private details of Victim', None,
-                    [{'LOWER': 'rape'}, {'IS_ASCII': True, 'OP': '*'}, {'LOWER': 'of'}, {'IS_ASCII': True, 'OP': '*'}, {'LOWER': 'vidya'}],
-                    [{'LOWER': 'rape'}, {'IS_ASCII': True, 'OP': '*'}, {'LOWER': 'of'}, {'IS_ASCII': True, 'OP': '*'}, {'LOWER': 'vithya'}],
-                    [{'LOWER': 'murder'}, {'IS_ASCII': True, 'OP': '*'}, {'LOWER': 'of'}, {'IS_ASCII': True, 'OP': '*'},{'LOWER': 'seya'}],
-                    [{'LOWER': 'murder'}, {'IS_ASCII': True, 'OP': '*'}, {'LOWER': 'of'}, {'IS_ASCII': True, 'OP': '*'},{'LOWER': 'sadevmi'}],
-                    [{'LOWER': 'victim'}, {'IS_ASCII': True, 'OP': '*'}, {'LOWER': 'as'}, {'IS_ASCII': True, 'OP': '*'},{'LOWER': 'ramasamy'}],
-                    [{'LOWER': 'victim'}, {'IS_ASCII': True, 'OP': '*'}, {'LOWER': 'as'}, {'IS_ASCII': True, 'OP': '*'},{'LOWER': 'priyanka'}],
-                    [{'LOWER': 'raping'}, {'IS_ASCII': True, 'OP': '*'}, {'ENT_TYPE': 'PERSON'}]
+                    [{'LOWER': 'rape'}, {'IS_ASCII': True, 'OP': '*'}, {'LOWER': 'of'}, {'IS_ASCII': True, 'OP': '*'}, {'ENT_TYPE': 'PERSON'}],
+                    [{'LOWER': 'rape'}, {'IS_ASCII': True, 'OP': '*'}, {'LOWER': 'of'}, {'IS_ASCII': True, 'OP': '*'}, {'ENT_TYPE': 'PERSON'}],
+                    [{'LOWER': 'murder'}, {'IS_ASCII': True, 'OP': '*'}, {'LOWER': 'of'}, {'IS_ASCII': True, 'OP': '*'},{'ENT_TYPE': 'PERSON'}],
+                    [{'LOWER': 'murder'}, {'IS_ASCII': True, 'OP': '*'}, {'LOWER': 'of'}, {'IS_ASCII': True, 'OP': '*'},{'ENT_TYPE': 'PERSON'}],
+                    [{'LOWER': 'victim'}, {'IS_ASCII': True, 'OP': '*'}, {'LOWER': 'as'}, {'IS_ASCII': True, 'OP': '*'},{'ENT_TYPE': 'PERSON'}],
+                    [{'LOWER': 'victim'}, {'IS_ASCII': True, 'OP': '*'}, {'LOWER': 'as'}, {'IS_ASCII': True, 'OP': '*'},{'ENT_TYPE': 'PERSON'}],
+                    [{'LOWER': 'raping'}, {'IS_ASCII': True, 'OP': '*'}, {'ENT_TYPE': 'PERSON'}],
             )
 
 #hanging, jumping, poison
 matcher.add('Disclosing details dealing with Social Issues', None,
                     [{'LOWER': 'committed'},{'LOWER': 'suicide'}, {'IS_ASCII': True, 'OP': '*'}, {'LOWER': 'by'}],
-            )
+                    [{'LOWER': 'gang'},{'IS_ASCII': True, 'OP': '*'},{'LOWER': 'rape'}, {'IS_ASCII': True, 'OP': '*'}, {'LOWER': 'his'},{'IS_ASCII': True, 'OP': '*'}, {'LOWER': 'girl'}],
+                    [{'LOWER': 'gang'}, {'LOWER': 'rape'},{'IS_ASCII': True, 'OP': '*'},{'LOWER': 'girl'}],
+                    [{'LOWER': 'killed'}, {'LOWER': 'by'},{'IS_ASCII': True, 'OP': '*'},{'LOWER': 'mother'}],
+                    [{'LOWER': 'killed'}, {'LOWER': 'by'},{'IS_ASCII': True, 'OP': '*'},{'LOWER': 'father'}],
+                    [{'LOWER': 'mur'}, {'LOWER': 'rape'},{'IS_ASCII': True, 'OP': '*'},{'LOWER': 'girl'}],
+
+           )
 
 matcher.add('Disclosing details of race, caste, religion, sexual orientation, physical and mental illness or disabilities', None,
                     [{'LOWER': 'gay'},{'LOWER': 'patner'}],
@@ -28,6 +34,10 @@ matcher.add('Disclosing details of race, caste, religion, sexual orientation, ph
                     [{'ENT_TYPE': 'PERSON'},{'IS_ASCII': True, 'OP': '*'},{'LOWER': 'with'}, {'IS_ASCII': True, 'OP': '*'}, {'LOWER': 'disabilities'}]
             )
 
+matcher.add('Promoting communal or Religious discords or violence', None,
+                    [{'LOWER': 'gay'},{'LOWER': 'patner'}],
+
+            )
 
 # doc = nlp(u'Several demonstrations and satyagraha campaigns were carried out in various parts of the country today as well in protest of the rape and murder of school student, Vidya Sivaloganathan, in Jaffna.\r\nThe demonstrators demand that the law be strictly enforced over the incident.Students and teachers of Sri Shanmugha College Trincomalee staged a demonstration this morning in protest of the murder of Vidya Sivaloganathan. A protest was held in the Kiliveddi area in Trincomalee urging that the law be strictly be enforced against the suspects of the rape and murder.Protests were also held in the Akkaraipatthu, Alaidi Vembu and Adalachchennai areas of the Ampara District today. The Ceylon Teachers\u2019 Union also organized a protest that was staged in Armour Street, Colombo today demanding justice for the murdered victim.General Secretary of the Ceylon Teachers\u2019 Union, Joseph Stalin stated that an investigative committee must be appointed to conduct extensive investigations, not only to the rape of Vidya, but all cases where students and women were victim to sexual harassment in the post-war period.Rights group, Women for Rights emphasized that it is a regretting fact that harassment against women in the south has now spread to the north.President of Women for Rights, Samanmalee Gunasinghe at a media briefing stated that what was happening in the South has now spread to the North as well and if Vindya\u2019s incident is being used to to incite racism, or bury whatever freedom the people have won, be it in the North or the South, it should not happen.SLFP National Organizer, Susil Premajayantha stated that it is with utmost disgust that this incident is condemned. He further stated that it has not been heard where of nine men gang raping a school student and that this implies the fall of John Amaratunga\u2019s Police. He also noted that the President, the first citizen of this country, when visiting Jaffna to attend another ceremony met with the mother and family of the victim and promised that justice willbe served but the subject minister is compiling a report.He further noted thatbecause law enforcement officials did not act at the correct time and the correct way, the public is outraged.Minister of Mass Media, Shantha Bandara stated that His Excellency the President visited Jaffna in haste just for this matter and made a clear statement that the perpetrators will be punished under a special court. He added that this should happen the president should take up the leadership to immediately put the decision taken into effect before the country forgets the incident and these inhumane suspects be punished in public.')
 # matches = matcher(doc)
@@ -36,7 +46,7 @@ matcher.add('Disclosing details of race, caste, religion, sexual orientation, ph
 #     string_id = nlp.vocab.strings[match_id]
 #     span = doc[start:end]
 #     print(match_id, string_id, span.text)
-
+#
 # for ent in doc.ents:
 #     print(ent.text, ent.label_)
 
@@ -48,6 +58,8 @@ def getViolation(newPredict):
     aList = []
     for i in range(len(newPredict)):
         doc = nlp(newPredict[i]["content"])
+        for ent in doc.ents:
+            print(ent.text, ent.label_)
         for ent in doc.ents:
             print(ent.text, ent.label_)
         matches = matcher(doc)
@@ -90,12 +102,12 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
             ethics = getViolation(body['data'])
             self.send_response(200)
             self.end_headers()
-            self.wfile.write(str(ethics))
+            self.wfile.write(bytes(str(ethics),"utf-8"))
         except Exception as e:
             print(str(e))
             self.send_response(401)
             self.end_headers()
-            self.wfile.write({'message': str(e)}, "utf-8")
+            self.wfile.write(bytes({'message': str(e)}, "utf-8"))
 
 httpd = HTTPServer(('localhost', 8000), SimpleHTTPRequestHandler)
 httpd.serve_forever()
